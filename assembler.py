@@ -29,6 +29,8 @@ def processInsn(mnem, ops):
 		if (imm & 0xFFFF0000) != 0: ret.append(('lui', (ops[1], '0x%04x' % (imm >> 16))))
 		if (imm & 0xFFFF) != 0: ret.append(('addi', (ops[1], ops[1] if ((imm & 0xFFFF0000) != 0) else '$0', '0x%04x' % (imm & 0xFFFF))))
 		return ret
+	elif mnem == 'move':
+		return [('addu', (ops[0], ops[1], '$0'))]
 	return [(mnem, ops)]
 
 def assemble(base, code):
