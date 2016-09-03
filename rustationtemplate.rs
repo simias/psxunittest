@@ -7,7 +7,6 @@ use gpu::{Gpu, VideoClock};
 use gpu::renderer::{Renderer, PrimitiveAttributes, Vertex};
 use memory::{Interconnect, Addressable};
 use memory;
-use debugger::DummyDebugger;
 use shared::SharedState;
 use bios::Bios;
 
